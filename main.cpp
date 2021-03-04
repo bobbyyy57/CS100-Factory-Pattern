@@ -5,14 +5,14 @@ using namespace std;
 
 int main(int argc, char**argv) {
 
-    Factory* expressionTree = new Factory();
+    Factory expressionTree;
     
     for (unsigned i = 0; i < argc; i++) {
 	 cout << argv[i] << " ";
     }
 	cout << endl;
 
-    Base* result = expressionTree->parse(argv, argc);
+    Base* result = expressionTree.parse(argv, argc);
 
     if(!result) {
 	cout << "invalid expression Tree" << endl;

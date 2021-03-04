@@ -6,7 +6,7 @@ class Op : public Base {
     private: 
 	      double val;
     public:
-	~Op(){}
+	~Op() = default;
 
         Op(double value) : Base() { val = value; }
         virtual double evaluate() { return val; }

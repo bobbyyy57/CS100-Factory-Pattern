@@ -17,7 +17,7 @@ using namespace std;
 class Factory {
 	public: 
 		Factory() {};
-		~Factory() {}
+		~Factory() = default;
 
 		vector<string> ParseHelper(char** input, int length) {
 			vector<string> expression;
@@ -108,7 +108,6 @@ class Factory {
 					double val2 = stod(expression.at(i+1));
 					Base* op1 = new Op(val1);
 					Base* op2 = new Op(val2);
-	//				delete op1, op2;
 					product = new Add(op1, op2);
 					}
 					else {
@@ -125,8 +124,8 @@ class Factory {
                                         double val2 = stod(expression.at(i+1));
                                         Base* op1 = new Op(val1);
                                         Base* op2 = new Op(val2);
-                                        product = new Sub(op1, op2);
-                                        }
+                                        product = new Div(op1, op2);
+					}
                                         else {
                                         double val2 = stod(expression.at(i+1));
                                         Base* op1 = new Op(val1);
